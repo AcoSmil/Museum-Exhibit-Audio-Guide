@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
- public class PlaybackLog {
+public class PlaybackLog {
 
     @Id
     private String playbackId; // Primary key for playback log

@@ -37,7 +37,6 @@ public class BookmarkController {
         return bookmarkService.saveBookmark(bookmark);
     }
 
-
     // Delete a bookmark
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBookmark(@PathVariable String id) {
