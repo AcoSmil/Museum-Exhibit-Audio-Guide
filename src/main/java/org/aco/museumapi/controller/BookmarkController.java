@@ -37,6 +37,16 @@ public class BookmarkController {
         return bookmarkService.saveBookmark(bookmark);
     }
 
+    @PatchMapping("/{id}")
+    public ResponseEntity<Bookmark> updateBookmark(
+            @PathVariable String id,
+            @RequestBody Bookmark updatedBookmark) {
+        return bookmarkService.updateBookmark(id, updatedBookmark)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
     // Delete a bookmark
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBookmark(@PathVariable String id) {
